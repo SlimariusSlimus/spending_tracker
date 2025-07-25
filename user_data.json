@@ -1,0 +1,487 @@
+[
+  {
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@example.com",
+    "phone": "+49111548115",
+    "purchases": [
+      {
+        "date": "07-22-2025",
+        "seller": "amazon",
+        "item_name": "socks",
+        "cost": 2.0,
+        "quantity": 10,
+        "total_weight": 1.0,
+        "total_cost": 22.5
+      },
+      {
+        "date": "07-21-2025",
+        "seller": "ebay",
+        "item_name": "wireless mouse",
+        "cost": 25.0,
+        "quantity": 1,
+        "total_weight": 0.1,
+        "total_cost": 25.0
+      },
+      {
+        "date": "07-20-2025",
+        "seller": "mediamarkt",
+        "item_name": "keyboard",
+        "cost": 75.0,
+        "quantity": 1,
+        "total_weight": 1.2,
+        "total_cost": 75.0
+      },
+      {
+        "date": "07-19-2025",
+        "seller": "amazon",
+        "item_name": "usb-c cable",
+        "cost": 7.99,
+        "quantity": 2,
+        "total_weight": 0.05,
+        "total_cost": 15.98
+      },
+      {
+        "date": "07-18-2025",
+        "seller": "ikea",
+        "item_name": "desk lamp",
+        "cost": 35.0,
+        "quantity": 1,
+        "total_weight": 2.5,
+        "total_cost": 35.0
+      },
+      {
+        "date": "07-17-2025",
+        "seller": "apple",
+        "item_name": "airpods pro",
+        "cost": 249.0,
+        "quantity": 1,
+        "total_weight": 0.2,
+        "total_cost": 249.0
+      },
+      {
+        "date": "07-16-2025",
+        "seller": "amazon",
+        "item_name": "coffee beans",
+        "cost": 15.0,
+        "quantity": 2,
+        "total_weight": 1.0,
+        "total_cost": 30.0
+      },
+      {
+        "date": "07-15-2025",
+        "seller": "google store",
+        "item_name": "chromecast",
+        "cost": 39.0,
+        "quantity": 1,
+        "total_weight": 0.3,
+        "total_cost": 39.0
+      },
+      {
+        "date": "07-14-2025",
+        "seller": "ebay",
+        "item_name": "gaming headset",
+        "cost": 89.99,
+        "quantity": 1,
+        "total_weight": 0.8,
+        "total_cost": 89.99
+      },
+      {
+        "date": "07-13-2025",
+        "seller": "aldi",
+        "item_name": "milk",
+        "cost": 1.2,
+        "quantity": 3,
+        "total_weight": 3.0,
+        "total_cost": 3.6
+      },
+      {
+        "date": "07-12-2025",
+        "seller": "lidl",
+        "item_name": "bread",
+        "cost": 2.5,
+        "quantity": 1,
+        "total_weight": 0.5,
+        "total_cost": 2.5
+      },
+      {
+        "date": "07-11-2025",
+        "seller": "amazon",
+        "item_name": "ssd 1tb",
+        "cost": 99.0,
+        "quantity": 1,
+        "total_weight": 0.08,
+        "total_cost": 99.0
+      },
+      {
+        "date": "07-10-2025",
+        "seller": "otto",
+        "item_name": "t-shirt",
+        "cost": 19.99,
+        "quantity": 3,
+        "total_weight": 0.3,
+        "total_cost": 59.97
+      },
+      {
+        "date": "07-09-2025",
+        "seller": "zalando",
+        "item_name": "jeans",
+        "cost": 60.0,
+        "quantity": 1,
+        "total_weight": 0.7,
+        "total_cost": 60.0
+      },
+      {
+        "date": "07-08-2025",
+        "seller": "amazon",
+        "item_name": "webcam",
+        "cost": 45.0,
+        "quantity": 1,
+        "total_weight": 0.2,
+        "total_cost": 45.0
+      },
+      {
+        "date": "07-07-2025",
+        "seller": "local market",
+        "item_name": "fresh fruit",
+        "cost": 8.5,
+        "quantity": 1,
+        "total_weight": 1.5,
+        "total_cost": 8.5
+      },
+      {
+        "date": "07-06-2025",
+        "seller": "steam",
+        "item_name": "game title",
+        "cost": 59.99,
+        "quantity": 1,
+        "total_weight": 0.0,
+        "total_cost": 59.99
+      },
+      {
+        "date": "07-05-2025",
+        "seller": "tech shop",
+        "item_name": "monitor",
+        "cost": 299.0,
+        "quantity": 1,
+        "total_weight": 6.0,
+        "total_cost": 299.0
+      },
+      {
+        "date": "07-04-2025",
+        "seller": "online book",
+        "item_name": "python book",
+        "cost": 30.0,
+        "quantity": 1,
+        "total_weight": 0.6,
+        "total_cost": 30.0
+      },
+      {
+        "date": "07-03-2025",
+        "seller": "chemist",
+        "item_name": "vitamins",
+        "cost": 12.0,
+        "quantity": 1,
+        "total_weight": 0.1,
+        "total_cost": 12.0
+      },
+      {
+        "date": "07/25/2025",
+        "seller": "aldi",
+        "item_name": "screwdriver bits",
+        "cost": 5.99,
+        "quantity": 2,
+        "total_weight": 0.42,
+        "total_cost": 11.98
+      }
+    ],
+    "spending_limit": 1400.0
+  },
+  {
+    "username": "user1",
+    "password": "ThisIsMy2ndSecurePASSWORD",
+    "email": "user1@example.com",
+    "phone": "+436601234567",
+    "purchases": [
+      {
+        "date": "07-22-2025",
+        "seller": "ebay",
+        "item_name": "vintage camera",
+        "cost": 150.0,
+        "quantity": 1,
+        "total_weight": 0.8,
+        "total_cost": 150.0
+      },
+      {
+        "date": "07-21-2025",
+        "seller": "amazon",
+        "item_name": "headphones",
+        "cost": 99.0,
+        "quantity": 1,
+        "total_weight": 0.3,
+        "total_cost": 99.0
+      },
+      {
+        "date": "07-20-2025",
+        "seller": "sport shop",
+        "item_name": "running shoes",
+        "cost": 80.0,
+        "quantity": 1,
+        "total_weight": 0.7,
+        "total_cost": 80.0
+      },
+      {
+        "date": "07-19-2025",
+        "seller": "book store",
+        "item_name": "novel",
+        "cost": 18.0,
+        "quantity": 1,
+        "total_weight": 0.4,
+        "total_cost": 18.0
+      },
+      {
+        "date": "07-18-2025",
+        "seller": "aldi",
+        "item_name": "pizza",
+        "cost": 3.5,
+        "quantity": 2,
+        "total_weight": 1.5,
+        "total_cost": 7.0
+      },
+      {
+        "date": "07-17-2025",
+        "seller": "local bakery",
+        "item_name": "croissant",
+        "cost": 2.0,
+        "quantity": 5,
+        "total_weight": 0.2,
+        "total_cost": 10.0
+      }
+    ],
+    "spending_limit": 200
+  },
+  {
+    "username": "jane-doe",
+    "password": "Secure_pwd7",
+    "email": "jane.doe@example.com",
+    "phone": "+436769876543",
+    "purchases": [
+      {
+        "date": "07-22-2025",
+        "seller": "amazon",
+        "item_name": "yoga mat",
+        "cost": 30.0,
+        "quantity": 1,
+        "total_weight": 1.5,
+        "total_cost": 30.0
+      },
+      {
+        "date": "07-20-2025",
+        "seller": "h&m",
+        "item_name": "dress",
+        "cost": 45.0,
+        "quantity": 1,
+        "total_weight": 0.5,
+        "total_cost": 45.0
+      },
+      {
+        "date": "07-15-2025",
+        "seller": "beauty store",
+        "item_name": "face cream",
+        "cost": 20.0,
+        "quantity": 1,
+        "total_weight": 0.1,
+        "total_cost": 20.0
+      },
+      {
+        "date": "07-10-2025",
+        "seller": "online grocer",
+        "item_name": "organic vegetables",
+        "cost": 12.0,
+        "quantity": 1,
+        "total_weight": 2.0,
+        "total_cost": 12.0
+      }
+    ],
+    "spending_limit": 110
+  },
+  {
+    "username": "power_user",
+    "password": "complexPWD!1",
+    "email": "power_user@example.com",
+    "phone": "+491701234567",
+    "purchases": [
+      {
+        "date": "07-23-2025",
+        "seller": "mediamarkt",
+        "item_name": "gaming laptop",
+        "cost": 1500.0,
+        "quantity": 1,
+        "total_weight": 3.0,
+        "total_cost": 1500.0
+      },
+      {
+        "date": "07-22-2025",
+        "seller": "amazon",
+        "item_name": "external hard drive",
+        "cost": 70.0,
+        "quantity": 1,
+        "total_weight": 0.3,
+        "total_cost": 70.0
+      },
+      {
+        "date": "07-21-2025",
+        "seller": "steam",
+        "item_name": "new game release",
+        "cost": 60.0,
+        "quantity": 1,
+        "total_weight": 0.0,
+        "total_cost": 60.0
+      },
+      {
+        "date": "07-20-2025",
+        "seller": "tech shop",
+        "item_name": "webcam",
+        "cost": 40.0,
+        "quantity": 1,
+        "total_weight": 0.1,
+        "total_cost": 40.0
+      },
+      {
+        "date": "07-19-2025",
+        "seller": "amazon",
+        "item_name": "microphone",
+        "cost": 120.0,
+        "quantity": 1,
+        "total_weight": 0.6,
+        "total_cost": 120.0
+      },
+      {
+        "date": "07-18-2025",
+        "seller": "ebay",
+        "item_name": "graphic tablet",
+        "cost": 200.0,
+        "quantity": 1,
+        "total_weight": 0.9,
+        "total_cost": 200.0
+      },
+      {
+        "date": "07-17-2025",
+        "seller": "logitech",
+        "item_name": "speakers",
+        "cost": 150.0,
+        "quantity": 1,
+        "total_weight": 4.0,
+        "total_cost": 150.0
+      },
+      {
+        "date": "07-16-2025",
+        "seller": "amazon",
+        "item_name": "ergonomic chair",
+        "cost": 300.0,
+        "quantity": 1,
+        "total_weight": 15.0,
+        "total_cost": 300.0
+      }
+    ],
+    "spending_limit": 5000
+  },
+  {
+    "username": "guest_user",
+    "password": "gueSt000!",
+    "email": "guest@example.com",
+    "phone": "",
+    "purchases": [
+      {
+        "date": "07-22-2025",
+        "seller": "local shop",
+        "item_name": "magazine",
+        "cost": 5.0,
+        "quantity": 1,
+        "total_weight": 0.2,
+        "total_cost": 5.0
+      },
+      {
+        "date": "07-21-2025",
+        "seller": "cafe",
+        "item_name": "coffee",
+        "cost": 3.5,
+        "quantity": 1,
+        "total_weight": 0.1,
+        "total_cost": 3.5
+      }
+    ],
+    "spending_limit": 50
+  },
+  {
+    "username": "testuser",
+    "password": "test123!ABC",
+    "email": "test@example.com",
+    "phone": "+4369912345678",
+    "purchases": [
+      {
+        "date": "07-22-2025",
+        "seller": "amazon",
+        "item_name": "blankets",
+        "cost": 40.0,
+        "quantity": 2,
+        "total_weight": 3.0,
+        "total_cost": 80.0
+      },
+      {
+        "date": "07-20-2025",
+        "seller": "zara",
+        "item_name": "jacket",
+        "cost": 70.0,
+        "quantity": 1,
+        "total_weight": 1.0,
+        "total_cost": 70.0
+      },
+      {
+        "date": "07-18-2025",
+        "seller": "local pharmacy",
+        "item_name": "painkillers",
+        "cost": 8.0,
+        "quantity": 1,
+        "total_weight": 0.05,
+        "total_cost": 8.0
+      },
+      {
+        "date": "07-15-2025",
+        "seller": "online music",
+        "item_name": "vinyl record",
+        "cost": 25.0,
+        "quantity": 1,
+        "total_weight": 0.4,
+        "total_cost": 25.0
+      },
+      {
+        "date": "07-12-2025",
+        "seller": "gamestop",
+        "item_name": "controller",
+        "cost": 55.0,
+        "quantity": 1,
+        "total_weight": 0.3,
+        "total_cost": 55.0
+      },
+      {
+        "date": "07-10-2025",
+        "seller": "amazon",
+        "item_name": "charging cable",
+        "cost": 9.99,
+        "quantity": 3,
+        "total_weight": 0.1,
+        "total_cost": 29.97
+      }
+    ],
+    "spending_limit": 350
+  },
+  {
+    "username": "user_123",
+    "password": "User_123!",
+    "email": "user_123@mail.org",
+    "phone": "+119748354",
+    "purchases": [],
+    "spending_limit": 900.0
+  }
+]
