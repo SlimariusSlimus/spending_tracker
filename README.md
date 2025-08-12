@@ -1,30 +1,32 @@
 # Spending Tracker Application
 
-This command-line application offers a straightforward way to keep tabs on spending. It provides functionalities for user management, purchase logging, and generating various financial reports. This project was built as part of a programming course, highlighting core Python concepts, file handling, and robust input validation.
+A command-line program for tracking spending. It includes basic user account management, purchase logging, and generating financial reports. The project was built as part of a programming course to demonstrate Python fundamentals, file handling, and input validation.
+
+**Note:** Passwords are stored in plain text. This is not secure and the program should not be used for real-world account or financial management. It is intended solely as a programming exercise.
 
 ## Features
 
 * **User Accounts:**
-    * **Registration:** Create a new account with a secure username and strong password, along with a unique email address. (please mind that passwords are not encrypted and therefore not secure!)
-    * **Login:** Access your account, with a limited number of attempts to ensure security.
+    * **Registration:** Create a new account with a username, password, and unique email address. (Passwords are stored in plain text and are not secure.)
+    * **Login:** Sign in to an account with a limited number of attempts.
 
 * **Purchase Tracking:**
-    * **Log Purchases:** Easily record details for each item, including where it was bought, the date, item name, cost, shipping fees, weight, and quantity.
-    * **Spending Limits:** Set a custom financial limit to help manage your budget effectively.
+    * **Log Purchases:** Record details for each item, including seller, date, item name, cost, shipping fees, weight, and quantity.
+    * **Spending Limits:** Set a personal financial limit.
 
-* **Detailed Reports:**
-    * **Full Summary:** Get a complete overview of all your purchases, showing total spending, total weight, and highlighting your most expensive and heaviest buys.
-    * **Filtered Views:** Generate specialized reports based on criteria like seller, date, or specific items.
+* **Reports:**
+    * **Full Summary:** Shows all purchases with total spending, total weight, and identifies the most expensive and heaviest items.
+    * **Filtered Views:** Generate reports by seller, date, or specific item.
 
 ---
 
 ## Getting Started
 
-1.  **Requirements:**
-    * Python 3.x installed on your system.
+1. **Requirements:**
+    * Python 3.x
 
-2.  **Run the Application:**
-    Navigate to the application's directory in your terminal or command prompt and execute:
+2. **Run the Application:**
+    From the application directory, run:
     ```bash
     python spending_tracker.py
     ```
@@ -33,28 +35,27 @@ This command-line application offers a straightforward way to keep tabs on spend
 
 ### Core Components
 
-* **Constants & Global Variables:** These define essential settings and track the application's overall state, like the currently logged-in user.
-* **Initialization:** At startup, the application attempts to load a list of common passwords. Comprehensive **error handling** is in place to gracefully manage any issues during file access, such as a missing file or permission problems.
+* **Constants & Global Variables:** Store application settings and track the logged-in user.
+* **Initialization:** Loads a list of common passwords at startup. Includes error handling for file access issues.
 
-### Enhancing Functionality with Decorators
+### Decorators
 
-* `@encase_output`: This decorator frames console output with a consistent visual border, making messages stand out.
-* `@requires_login`: A crucial decorator that ensures sensitive functions only run when a user is properly logged in, protecting user data.
+* `@encase_output`: Adds a border around console output for consistent formatting.
+* `@requires_login`: Ensures certain functions only run when a user is logged in.
 
-### Well-Defined Functions
+### Functions
 
-The codebase is broken down into small, purposeful functions, each designed for a specific task.
-
-* **Utility Functions:** These handle common operations like ending the program (`exit_program`), formatting print statements (`encased_print`), and managing user data files (`load_user_data`, `save_user_data`).
-* **Input Validation:** Functions such as `is_valid_new_username`, `is_valid_password`, `is_valid_email`, `is_valid_phone_number`, and `validate_date` rigorously check user input. They use **regular expressions** and logical checks to ensure data is correct and secure, enforcing rules like password complexity.
-* **User Management:** This set of functions (`register`, `add_user`, `is_correct_password`, `login`) manages the entire user lifecycle, from account creation to authentication.
-* **Purchase Management:** `save_purchase` and `enter_purchase` facilitate the interactive process of recording and storing new purchases.
-* **Reporting:** `generate_full_report`, `generate_filtered_report`, `filter_menu`, and `generate_report` provide flexible ways to analyze spending data, offering both comprehensive summaries and focused reports.
-* **Interactive Menus:** The `create_dynamic_menu` function is key to the application's user interface. It constructs interactive menus based on a list of available actions, making navigation intuitive.
-* **Settings:** `set_spending_limit` allows users to easily adjust their financial goals within the application.
+* **Utility:** Functions for exiting the program (`exit_program`), formatted printing (`encased_print`), and managing user data files (`load_user_data`, `save_user_data`).
+* **Input Validation:** Functions such as `is_valid_new_username`, `is_valid_password`, `is_valid_email`, `is_valid_phone_number`, and `validate_date` check input using regular expressions and logical rules.
+* **User Management:** Includes account creation (`register`, `add_user`), authentication (`is_correct_password`, `login`).
+* **Purchase Management:** `save_purchase` and `enter_purchase` handle adding new purchases.
+* **Reporting:** `generate_full_report`, `generate_filtered_report`, `filter_menu`, and `generate_report` produce summaries and filtered reports.
+* **Menus:** `create_dynamic_menu` builds text-based navigation menus.
+* **Settings:** `set_spending_limit` updates the spending limit.
 
 ---
 
-### Data Handling and Persistence
+### Data Storage
 
-All user information and purchase records are stored persistently in a **`user_data.json`** file. The application uses Python's `json` module to handle the seamless conversion of data between Python objects and JSON format, ensuring that your financial records are saved and retrieved correctly across sessions.
+All data is stored in **`user_data.json`**. The `json` module is used to convert between Python objects and JSON format for saving and loading.
+Passwords are stored in clear text and not encrypted.
