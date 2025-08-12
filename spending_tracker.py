@@ -1,9 +1,10 @@
 from typing import List, Dict, Any, Tuple, Callable, Optional, Union
 from functools import wraps
 from datetime import datetime
+from helpers import exit_program, encased_print
+from create_dynamic_menu import create_dynamic_menu as menu
 import json
 import re
-import sys
 import time
 
 # -------------------------------------
@@ -84,46 +85,6 @@ def requires_login(func: Callable[..., Any]) -> Callable[..., Any]:
 # -----------------
 # |-- Functions --|
 # -----------------
-def exit_program(*, reason: str | None = None) -> None:
-    """
-    Gracefully terminate the program, optionally displaying a reason.
-
-    Prints a message indicating that the program has ended.  
-    If a reason is provided, it is displayed before exiting.  
-    Waits for user confirmation before terminating the process.
-
-    Parameters:
-        reason str | None: Explanation for program termination (default: None).
-
-    Returns:
-        None
-    """
-    print('The program has ended.')
-    if reason:
-        print('This was for the following reason:')
-        print(f'{reason}\n')
-    input('Press Enter to exit...')
-    sys.exit()
-    
-    
-def encased_print(*args: Any, symbol: str = '-', length: int = 70) -> None:
-    """
-    Prints each argument on a new line, wrapped in a decorator-defined output format.
-
-    If no arguments are provided, prints a blank line.
-    Intended to standardize output appearance using the `@encase_output` decorator.
-
-    Parameters:
-        *args (Any): One or more values to print.
-    """
-    print(symbol * length)
-    if not args:
-        print()
-        return
-    for arg in args:
-        print(arg)
-    print(symbol * length)
-
 
 def load_user_data(*, data_path: str = USER_DATA_PATH) -> List[Dict[str, Any]]:
     """"
@@ -480,7 +441,7 @@ def enter_purchase(users: List[Dict[str, Any]]) -> None:
             seller = input('Where did you buy the product? (Amazon, Ebay, Temu, etc...): ').strip().lower()
             if len(seller) >= 3:
                 break
-            encased_print('Item name should be at least 3 characters. Please try again.')
+            encased_print('Seller name should be at least 3 characters. Please try again.')
         while True:
             date_input = input('When did you buy the product? (MM/DD/YYYY or MM-DD-YYYY): ').strip()
             if validate_date(date_input):
@@ -538,7 +499,7 @@ def enter_purchase(users: List[Dict[str, Any]]) -> None:
                 (save_purchase, 'save data', (purchase_data, users), {}),
                 (lambda: False, 'enter data again', (), {}),
             ]
-        if create_dynamic_menu(user_confirmation):
+        if menu(user_confirmation):
             break
 
 @encase_output()
@@ -651,7 +612,7 @@ def filter_menu(purchases: List[Dict[str, Any]]) -> None:
         (generate_filtered_report, 'filter for date', (purchases, 'date'), {}),
         (generate_filtered_report, 'filter for item', (purchases, 'item_name'), {})
     ]
-    return create_dynamic_menu(filtered_menu_options)
+    return menu(filtered_menu_options)
 
 
 @requires_login
@@ -673,7 +634,7 @@ def generate_report(report_type: str = '') -> None:
     output_purchases = None
     if not report_type:
         print('What kind of report do you want?')
-        create_dynamic_menu(report_options)
+        menu(report_options)
     elif report_type == 'full':
         output_purchases = generate_full_report(purchases)
     elif report_type == 'filtered':
@@ -684,7 +645,7 @@ def generate_report(report_type: str = '') -> None:
             (lambda data=output_purchases: data, 'show list', (output_purchases, ), {}),
             (lambda: None, 'end the report', (), {})
         ]
-        purchase_list = create_dynamic_menu(user_decision)
+        purchase_list = menu(user_decision)
         # if len(purchase_list) is 5, max_digits will be 1 (for for len(4))
         # if len(purchase_list) is 15, max_digits will be 2 (for len(14))
         max_digits = len(str(len(purchase_list) - 1))
@@ -692,48 +653,9 @@ def generate_report(report_type: str = '') -> None:
             for i, purchase in enumerate(purchase_list):
                 print(f'[{i:0{max_digits}}] {purchase}')
                 
+                
 
-def create_dynamic_menu(labeled_funcs: List[Tuple[Callable[..., Any], str, Tuple[Any, ...], Dict[str, Any]]]) -> Any:
-    """
-    Display a dynamic menu of labeled functions and execute the selected one with its arguments.
-
-    The menu is generated from a list of tuples, each containing:
-        - a function to call
-        - a description string for the menu
-        - a tuple of positional arguments for the function
-        - a dictionary of keyword arguments for the function
-
-    Option 0 is reserved to exit the program via exit_program.
-
-    Parameters:
-        labeled_funcs (List[Tuple[Callable[..., Any], str, Tuple[Any, ...], Dict[str, Any]]]):
-            A list of (function, description, args, kwargs) entries.
-
-    Returns:
-        Any: The return value of the executed function.
-    """
-    menu_options = [(0, (exit_program, 'exit', (), {}))]
-    menu_options.extend(enumerate(labeled_funcs, start=1))
-    valid_positions = [position[0] for position in menu_options]
-    while True:
-        for position, (_, description, _, _) in menu_options:
-            print(f'Enter {position} to {description}.')
-        print('Enter "back" or "b" to navigate back')
-        user_input = input("\nEnter your choice: ").strip()    
-        if user_input in {'back', 'b'}:
-            break
-        elif user_input in {'quit', 'q', 'exit', 'e'}:
-            exit_program()
-        try:
-            user_input = int(user_input)
-            print()
-            if user_input not in valid_positions:
-                raise ValueError
-            for position, (function, _, args, kwargs) in menu_options:
-                if user_input == position:
-                    return function(*args, **kwargs)
-        except ValueError:
-            encased_print('Invalid input. Please enter a valid number or command.')
+   
             
       
 @requires_login 
@@ -766,14 +688,14 @@ def main():
             (set_spending_limit, 'set a custom spending limit', (users, ), {})
         ]
         top_level_menu_options = [
-                (create_dynamic_menu, 'login / register', (user_control_actions,), {}),
-                (create_dynamic_menu, 'manage your purchases', (user_spending_actions,), {})
+                (menu, 'login / register', (user_control_actions,), {}),
+                (menu, 'manage your purchases', (user_spending_actions,), {})
             ]
         if is_logged_in:
             top_level_menu_options = [
-                (create_dynamic_menu, 'manage your purchases', (user_spending_actions,), {})
+                (menu, 'manage your purchases', (user_spending_actions,), {})
             ]
-        create_dynamic_menu(top_level_menu_options)
+        menu(top_level_menu_options)
         
 
 if __name__ == "__main__":
